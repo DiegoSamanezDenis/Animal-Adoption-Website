@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>A1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+        <%- include('header.ejs') %>
+        <script>
+            function validateForm(){
+                let dog=document.forms["petForm"]["species1"].checked;
+                let cat=document.forms["petForm"]["species2"].checked;
+                let breed=document.forms["petForm"]["breed1"].value;
+                let nobreed=document.forms["petForm"]["breed2"].checked;
+                let male=document.forms["petForm"]["gender1"].checked;
+                let female=document.forms["petForm"]["gender2"].checked;
+                let nogender=document.forms["petForm"]["gender3"].checked;
+                let dogY=document.forms["petForm"]["getalongD1"].checked;
+                let dogN=document.forms["petForm"]["getalongD2"].checked;
+                let catY=document.forms["petForm"]["getalongC1"].checked;
+                let catN=document.forms["petForm"]["getalongC2"].checked;
+                let childrenY=document.forms["petForm"]["getalongCh1"].checked;
+                let childrenN=document.forms["petForm"]["getalongCh2"].checked;
+
+                if(!dog&&!cat){
+                    alert("Please select a species.");
+                    return false;
+                }
+                if(breed==""&&!nobreed){
+                    alert("Please enter a breed.");
+                    return false;
+                }
+                var e = document.getElementById("age");
+                var optionSelIndex = e.options[e.selectedIndex].value;
+                var optionSelectedText = e.options[e.selectedIndex].text;
+                if (optionSelIndex == 0) {
+                    alert("Please select an age range.");
+                    return false;
+                }
+                if(!male&&!female&&!nogender){
+                    alert("Please select a gender.");
+                    return false;
+                }
+                if(!dogY&&!dogN){
+                    alert("Is it good with dogs?");
+                    return false;
+                }
+                if(!catY&&!catN){
+                    alert("Is it good with cats?");
+                    return false;
+                }
+                if(!childrenY&&!childrenN){
+                    alert("Is it good with children?");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        <div class="nav">
+            <nav>
+                <ul id="a">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Find a dog/cat</a>
+                    </li>
+                    <li>
+                        <a href="/dogcare">Dog Care</a>
+                    </li>
+                    <li>
+                        <a href="/catcare">Cat Care</a>
+                    </li>
+                    <li>
+                        <a href="/giveaway">Have a pet to give away</a>
+                    </li>
+                    <li>
+                        <a href="/createAccount">Create an Account</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="article">
+            <h2>Find Your New Best Friend!</h2><br>
+            <form action="/find" method="post" id="petForm" onsubmit="return validateForm()">
+                <fieldset class="fieldset">
+                    What kind of pet would you prefer?<br>
+                    <label>
+                        <input type="checkbox" name="species1" value="Dog">
+                        Dog
+                    </label>
+                    <label>
+                        <input type="checkbox" name="species2" value="Cat">
+                        Cat
+                    </label><br>
+                    <br>What breed would you prefer?<br>
+                    <textarea name="breed1" rows="1" id="breed"></textarea>            
+                    <input type="checkbox" name="breed2" value="No Matter">
+                    It doesn't matter<br>
+                    <br>What age range would you prefer?<br>
+                    <select name="age" id="age">
+                        <option value="0">Select</option>
+                        <option value="1">0-1 years-old</option>
+                        <option value="2">2-5 years old</option>
+                        <option value="3">5-7 years old</option>
+                        <option value="4">7-10 years old</option>
+                        <option value="5">10-15 years old</option>
+                    </select><br>
+                    <br>What gender would you prefer?<br>
+                    <label>
+                        <input type="checkbox" name="gender1" value="Male">
+                        Male
+                    </label>
+                    <label>
+                        <input type="checkbox" name="gender2" value="Female">
+                        Female
+                    </label>
+                    <label>
+                        <input type="checkbox" name="gender3" value="No Matter">
+                        It doesn't matter
+                    </label><br>
+                    <br>Do you want your pet to get along with other dogs?<br>
+                    <label>
+                        <input type="checkbox" name="getalongD1" value="yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="getalongD2" value="no">
+                        No
+                    </label><br>
+                    <br>Do you want your pet to get along with other cats?<br>
+                    <label>
+                        <input type="checkbox" name="getalongC1" value="yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="getalongC2" value="no">
+                        No
+                    </label><br>
+                    <br>Do you want your pet to be suitable for a family with small children?<br>
+                    <label>
+                        <input type="checkbox" name="getalongCh1" value="yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="getalongCh2" value="no">
+                        No
+                    </label>
+                </fieldset><br>
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </form>
+        </div>
+        <%- include('footer.ejs') %>
+    </body>
+</html>

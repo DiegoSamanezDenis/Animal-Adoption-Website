@@ -1,0 +1,34 @@
+<header>
+    <p id="date"></p>
+    <script>
+        updateDate();
+        setInterval(updateDate, 1000);
+
+        function updateDate() {
+            let date = getCurrentDate();
+            document.getElementById("date").innerHTML = date.toLocaleString();
+        }
+
+        function getCurrentDate() {
+            let d = new Date();
+            return d;
+        }
+    </script>
+    <table class="table">
+        <tr>
+            <th>
+                PURRfect Pairings
+            </th>
+            <td>
+                <a  href="/home">
+                    <img src="/OPHS.jpg" width="150" height="150" alt="paw logo">
+                </a>
+            </td>
+            <th>
+                <form action="/logout" method="get" style="margin-right:-10px; font-size:20px">
+                    <button type="submit">Log Out</button>
+                </form>
+            </th>
+        </tr>
+    </table>
+</header>

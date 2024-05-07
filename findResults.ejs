@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>A1</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/style.css" type="text/css">
+    </head>
+    <body>
+        <%- include('header.ejs') %>
+        <div class="nav">
+            <nav>
+                <ul id="a">
+                    <li >
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/find">Find a dog/cat</a>
+                    </li>
+                    <li>
+                        <a href="/dogcare">Dog Care</a>
+                    </li>
+                    <li>
+                        <a href="/catcare">Cat Care</a>
+                    </li>
+                    <li>
+                        <a href="/giveaway">Have a pet to give away</a>
+                    </li>
+                    <li>
+                        <a href="/createAccount">Create an Account</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="article">
+            <h1>Matching Pet Records</h1>
+    <% if (matchingRecords.length === 0) { %>
+        <p>No matching records found.</p>
+    <% } else { %>
+        <ul>
+            <% matchingRecords.forEach(record => { %>
+                <li>
+                    <strong>Species:</strong> <%= record[2] %><br>
+                    <strong>Breed:</strong> <%= record[3] %><br>
+                    <strong>Age:</strong> <%= record[4] %><br>
+                    <strong>Gender:</strong> <%= record[5] %><br>
+                    <strong>Good with Dogs:</strong> <%= record[6] %><br>
+                    <strong>Good with Cats:</strong> <%= record[7] %><br>
+                    <strong>Good with Children:</strong> <%= record[8] %><br>
+                    <strong>Comment:</strong> <%= record[9] %><br>
+                    <strong>Owner:</strong> <%= record[10] %> <%= record[11] %><br>
+                    <strong>Email:</strong> <%= record[12] %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+        </div>
+        <%- include('footer.ejs') %>
+    </body>
+</html>
