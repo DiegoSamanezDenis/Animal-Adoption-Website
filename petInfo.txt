@@ -1,0 +1,13 @@
+1:Diego04:Dog:fox terrier,bulldog:5-7 years old:Male:Yes:No:No:very cool:Diego:Samanez Denis:dsamanezdenis@gmail.com
+
+1:Diego04:Dog:fox terrier,bull:0-1 years old:Male:Yes:Yes:Yes::Tal:Hezzy:tal.butthead@yahoo.ca
+
+0:dwdw:Cat:german:5-7 years old:Female:No:Yes:No::Dom:Smith:dom.smith@gmail.com
+
+1:undefined:Dog:ddd:5-7 years old:Female:No:Yes:Yes::dd:fff:dom.smith@gmail.com
+
+1:Diego04:Cat:poodle:0-1 years old:Female:No:No:No:Very cuddly:Diego:Samanez:dsamanezdenis@gmail.com
+
+1:dwdw:Dog:fox terrier:2-5 years old:Female:No:No:No:Name is Trixie:Talyne:Hezaran:tal.princess@yahoo.ca
+1:Diego04:Cat:fox terrier:5-7 years old:Male:Yes:Yes:Yes::Dom:Peler:d.p@gmail.com
+1:dwdw:Cat:dd:7-10 years old:Female:Yes:No:Yes::bob:dylan:bobby@gmail.com
